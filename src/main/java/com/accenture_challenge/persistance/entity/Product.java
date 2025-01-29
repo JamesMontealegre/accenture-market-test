@@ -1,5 +1,6 @@
 package com.accenture_challenge.persistance.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
@@ -18,6 +19,7 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "branch_id", nullable = false)
+    @JsonIgnore
     private Branch branch;
 
     public Product() {

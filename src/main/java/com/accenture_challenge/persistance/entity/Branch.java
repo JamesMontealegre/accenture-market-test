@@ -1,5 +1,6 @@
 package com.accenture_challenge.persistance.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -17,9 +18,11 @@ public class Branch {
 
     @ManyToOne
     @JoinColumn(name = "franchise_id", nullable = false)
+    @JsonIgnore
     private Franchise franchise;
 
     @OneToMany(mappedBy = "branch", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<Product> products;
 
     public Branch() {
