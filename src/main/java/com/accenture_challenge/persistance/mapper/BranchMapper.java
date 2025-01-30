@@ -12,14 +12,14 @@ import java.util.List;
 public interface BranchMapper {
 
     @Mappings({
-            @Mapping(source = "id", target = "id"),
-            @Mapping(source = "name", target = "name"),
             @Mapping(source = "franchise.id", target = "franchiseId"),
             @Mapping(source = "franchise.name", target = "franchiseName")
     })
     BranchDTO toDTO(Branch branch);
 
-    @Mapping(target = "products", ignore = true)
+    @Mappings({
+            @Mapping(target = "franchise", ignore = true)  // No se puede inferir automáticamente desde franchiseId
+    })
     Branch toEntity(BranchDTO branchDTO);
 
     List<BranchDTO> toDTOList(List<Branch> branches);

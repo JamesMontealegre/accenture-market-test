@@ -8,10 +8,12 @@ import com.accenture_challenge.persistance.entity.Branch;
 import com.accenture_challenge.persistance.entity.Franchise;
 import com.accenture_challenge.persistance.mapper.BranchMapper;
 import jakarta.transaction.Transactional;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public class BranchRepositoryImpl implements BranchRepository {
 
     private final BranchCrudRepository branchCrudRepository;
