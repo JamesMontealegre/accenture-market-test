@@ -1,0 +1,129 @@
+{
+    "info": {
+        "name": "Accenture Challenge API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Products",
+            "item": [
+                {
+                    "name": "Get Top Stocked Products by Franchise",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{base_url}}/products/top-stocked/franchise/:productId"
+                    }
+                },
+                {
+                    "name": "Get Product by ID",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{base_url}}/products/:productId"
+                    }
+                },
+                {
+                    "name": "Update Product Stock",
+                    "request": {
+                        "method": "PUT",
+                        "url": "{{base_url}}/products/1/stock/:newStock"
+                    }
+                },
+                {
+                    "name": "Delete Product",
+                    "request": {
+                        "method": "DELETE",
+                        "url": "{{base_url}}/products/:productId"
+                    }
+                },
+                {
+                    "name": "Add New Product to Branch",
+                    "request": {
+                        "method": "POST",
+                        "url": "{{base_url}}/products",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"Burger\",\n    \"stock\": 100,\n    \"branchId\": 1,\n    \"branchName\": \"McDonalds - New York\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Get Products by Branch",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{base_url}}/products/branch/:branchId"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Branches",
+            "item": [
+                {
+                    "name": "Add New Branch to Franchise",
+                    "request": {
+                        "method": "POST",
+                        "url": "{{base_url}}/branches/:franchiseId",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"Sucursal Nueva\",\n    \"franchiseId\": 1,\n    \"franchiseName\": \"McDonalds - New York\"\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Get Branches by Franchise",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{base_url}}/branches/franchise/:franchiseId"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Franchises",
+            "item": [
+                {
+                    "name": "Add New Franchise",
+                    "request": {
+                        "method": "POST",
+                        "url": "{{base_url}}/franchises",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"Crepes and Waffles\",\n    \"branches\": []\n}"
+                        }
+                    }
+                },
+                {
+                    "name": "Get All Franchises",
+                    "request": {
+                        "method": "GET",
+                        "url": "{{base_url}}/franchises"
+                    }
+                }
+            ]
+        }
+    ],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost:8080"
+        }
+    ]
+}
