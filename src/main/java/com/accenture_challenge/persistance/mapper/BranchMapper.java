@@ -18,7 +18,7 @@ public interface BranchMapper {
     BranchDTO toDTO(Branch branch);
 
     @Mappings({
-            @Mapping(target = "franchise", ignore = true)  // No se puede inferir automáticamente desde franchiseId
+            @Mapping(target = "franchise", ignore = true)
     })
     Branch toEntity(BranchDTO branchDTO);
 

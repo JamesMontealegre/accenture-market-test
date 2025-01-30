@@ -46,4 +46,10 @@ public class ProductController {
         Optional<ProductDTO> productDTO = productRepository.findById(productId);
         return productDTO.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
+
+    @GetMapping("/branch/{branchId}")
+    public ResponseEntity<List<ProductDTO>> getProductsByBranch(@PathVariable Long branchId) {
+        List<ProductDTO> products = productRepository.getProductsByBranch(branchId);
+        return ResponseEntity.ok(products);
+    }
 }

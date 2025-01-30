@@ -14,7 +14,6 @@ public interface FranchiseMapper {
     FranchiseDTO toDTO(Franchise franchise);
 
     @Mapping(target = "branches", ignore = true)
-        // Se asignará manualmente en el repo
     Franchise toEntity(FranchiseDTO franchiseDTO);
 
     List<FranchiseDTO> toDTOList(List<Franchise> franchises);

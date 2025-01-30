@@ -12,4 +12,5 @@ public interface ProductRepository {
     void updateProductStock(Long productId, int newStock);
     List<ProductDTO> getTopStockedProductsByFranchise(Long franchiseId);
     Optional<ProductDTO> findById(Long productId);
+    List<ProductDTO> getProductsByBranch(Long branchId);
 }

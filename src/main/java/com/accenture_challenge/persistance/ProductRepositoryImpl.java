@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Repository
 public class ProductRepositoryImpl implements ProductRepository {
@@ -68,5 +69,11 @@ public class ProductRepositoryImpl implements ProductRepository {
     public Optional<ProductDTO> findById(Long productId) {
         return productCrudRepository.findById(productId)
                 .map(productMapper::toDTO);
+    }
+
+    @Override
+    public List<ProductDTO> getProductsByBranch(Long branchId) {
+        List<Product> products = productCrudRepository.findByBranchId(branchId);
+        return products.stream().map(productMapper::toDTO).collect(Collectors.toList());
     }
 }

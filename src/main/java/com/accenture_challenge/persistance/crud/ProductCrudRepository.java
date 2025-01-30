@@ -23,4 +23,10 @@ public interface ProductCrudRepository extends CrudRepository<Product, Long> {
                 )
             """, nativeQuery = true)
     List<Product> findTopStockedProductsByFranchise(@Param("franchiseId") Long franchiseId);
+
+    @Query(value = """
+                SELECT p.* FROM franchises.products p
+                WHERE p.branch_id = :branchId
+            """, nativeQuery = true)
+    List<Product> findByBranchId(@Param("branchId") Long branchId);
 }
