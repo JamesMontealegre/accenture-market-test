@@ -91,7 +91,7 @@ INSERT INTO franchises.product (name, stock, branch_id) VALUES
 
 ## 2. Exponer endpoint para agregar una nueva franquicia.
 
-POST http://localhost:8080/franchises  
+POST {{base_url}}/franchises
 
 Body:  
 {
@@ -100,11 +100,11 @@ Body:
 }
 
 Verify with:  
-GET http://localhost:8080/franchises
+**GET {{base_url}}/franchises**
 
 ## 3. Exponer endpoint para agregar una nueva sucursal a una franquicia.
 
-POST http://localhost:8080/branches/{franchiseId}  
+**POST {{base_url}}/branches/{franchiseId}**  
 Body:  
 {
 "name": "Sucursal Nueva",
@@ -113,11 +113,11 @@ Body:
 }
 
 Verify with:  
-GET http://localhost:8080/branches/franchise/{franchiseId}
+**GET {{base_url}}/branches/franchise/{franchiseId}**
 
 ## 4. Exponer endpoint para agregar un nuevo producto a una sucursal.
 
-POST http://localhost:8080/products  
+**POST {{base_url}}/products**  
 Body:  
 {
 "name": "Burger",
@@ -127,19 +127,23 @@ Body:
 }
 
 Verify with:  
-GET http://localhost:8080/products/branch/{branchId}
+**GET {{base_url}}/products/branch/{branchId}**
 
 ## 5. Exponer endpoint para eliminar un nuevo producto a una sucursal.
-DELETE http://localhost:8080/products/{productId}
+DELETE {{base_url}}/products/{productId}
 
 ## 6. Exponer endpoint para modificar el stock de un producto.
-PUT http://localhost:8080/products/1/stock/{newStock}
+**PUT {{base_url}}/products/1/stock/{newStock}**
 
 Verify with:  
-GET http://localhost:8080/products/{productId}
+**GET {{base_url}}/products/{productId}**
 
 ## 7. Exponer endpoint que permita mostrar cual es el producto que más stock tiene por sucursal para una franquicia puntual. Debe retornar un listado de productos que indique a que sucursal pertenece.
-GET http://localhost:8080/products/top-stocked/franchise/{productId}
+**GET {{base_url}}/products/top-stocked/franchise/{productId}**
 
 
-### NOTA: En la raíz del proyecto se encuentra una colección de POSTMAN para llevar a cabo las pruebas de la API
+## NOTA: 
+* En la raíz del proyecto se encuentra una colección de POSTMAN para llevar a cabo las pruebas de la API
+* La aplicación se encuentra desplega en la dirección: http://44.223.4.204/
+## Evidencia: 
+![img_2.png](img_2.png)
