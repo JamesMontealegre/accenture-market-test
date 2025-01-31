@@ -144,6 +144,6 @@ Verify with:
 
 ## NOTA: 
 * En la raíz del proyecto se encuentra una colección de POSTMAN para llevar a cabo las pruebas de la API
-* La aplicación se encuentra desplega en la dirección: http://44.223.4.204/
+* La aplicación se encuentra desplega en la dirección: http://44.223.4.204/ usar esta dirección para probar las colecciones en postman
 ## Evidencia: 
 ![img_2.png](img_2.png)
